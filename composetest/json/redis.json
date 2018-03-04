@@ -1,0 +1,6 @@
+{
+  "ID": "redis-1",
+  "Name": "redis",
+  "Address": "localhost",
+  "Port": 6379
+}

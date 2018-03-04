@@ -1,0 +1,31 @@
+version: '2'
+services:
+    web:
+       build: .
+       ports:
+         - "5000:5000"
+       volumes:
+         - .:/code
+       network_mode: host
+       #environment:
+       # - REDIS_HOST=redis
+       depends_on:
+         - redis
+    redis:
+       image: "redis"
+       network_mode: host
+       ports:
+         - "6379:6379"
+    consul-dev:
+       image: consul
+       network_mode: host
+       ports:
+         - "8300:8300/tcp"
+         - "8301:8301/tcp"
+         - "8301:8301/udp"
+         - "8302:8302/tcp"
+         - "8302:8302/udp"
+         - "8500:8500/tcp"
+         - "8600:8600/tcp"
+         - "8600:8600/udp"
+       command: agent -dev -client 0.0.0.0 
