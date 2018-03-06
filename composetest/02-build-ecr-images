@@ -2,8 +2,8 @@
 
 AWS_PROFILE=default
 AWS_REGION=ap-southeast-2
-AWS_ACCOUNT_ID=504325682536
-ECR_PREFIX=eric-test
+AWS_ACCOUNT_ID=XXXXXXXXX
+ECR_PREFIX=sam-test
 
 eval $(aws --profile $AWS_PROFILE ecr get-login --no-include-email --region $AWS_REGION)
 
