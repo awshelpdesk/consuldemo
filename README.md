@@ -14,4 +14,6 @@ Note: We can automate the discovery process lately, like mentioned here, https:/
 1. We need to setup AWS CLI(https://docs.aws.amazon.com/cli/latest/userguide/installing.html) environment with ECS CLI(https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cmd-ecs-cli-compose-up.html).
    a. Configure AWS CLI with access-keys and region information (https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html)
    
-2. To run our docker-compose.yml over ECS, we need to transpose it to correct ecs format. 
+2. To run our docker-compose.yml over ECS, we need to transpose it to correct ecs format using 'convert-docker-compose-to-cloudformation.rb'
+   a. As a result you will get a file named 'cloud-formation-task.json' which is an ECS version of local docker-compose.yml
+
