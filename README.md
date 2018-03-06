@@ -17,3 +17,6 @@ Note: We can automate the discovery process lately, like mentioned here, https:/
 2. To run our docker-compose.yml over ECS, we need to transpose it to correct ecs format using 'convert-docker-compose-to-cloudformation.rb'
    a. As a result you will get a file named 'cloud-formation-task.json' which is an ECS version of local docker-compose.yml
 
+3. Now its time to create ECR repositories and upload our local docker containers over AWS.
+   a. Firstly locally run 'docker-compose --build. and note down the generated containers names.
+   b. 
