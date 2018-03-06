@@ -8,3 +8,10 @@
 6. Use 'http://<DOCKER_HOST>:8500/ui/#/dc1/services' to browse Consul UI in browser.
 
 Note: We can automate the discovery process lately, like mentioned here, https://github.com/subokita/consul-docker-test
+
+# Deployment via AWS ECS
+
+1. We need to setup AWS CLI(https://docs.aws.amazon.com/cli/latest/userguide/installing.html) environment with ECS CLI(https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cmd-ecs-cli-compose-up.html).
+   a. Configure AWS CLI with access-keys and region information (https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html)
+   
+2. To run our docker-compose.yml over ECS, we need to transpose it to correct ecs format. 
