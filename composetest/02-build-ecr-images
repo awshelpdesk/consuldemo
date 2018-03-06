@@ -1,0 +1,18 @@
+#!/bin/bash
+
+AWS_PROFILE=default
+AWS_REGION=ap-southeast-2
+AWS_ACCOUNT_ID=504325682536
+ECR_PREFIX=eric-test
+
+eval $(aws --profile $AWS_PROFILE ecr get-login --no-include-email --region $AWS_REGION)
+
+containers=(composetest_web-dev_1)
+for container in "${containers[@]}"
+do
+  cd $container
+  docker build -t $ECR_PREFIX/$container .
+  docker tag $ECR_PREFIX/$container:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_PREFIX/$container:latest
+  docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_PREFIX/$container:latest
+  cd ..
+done

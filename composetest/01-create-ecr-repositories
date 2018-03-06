@@ -1,0 +1,11 @@
+#!/bin/bash
+
+AWS_PROFILE=default
+AWS_REGION=ap-southeast-2
+ECR_PREFIX=eric-test
+
+containers=(composetest_redis-dev_1 composetest_consul-dev_1 composetest_web-dev_1)
+for container in "${containers[@]}"
+do
+  aws --profile $AWS_PROFILE ecr create-repository --repository-name $ECR_PREFIX/$container
+done
