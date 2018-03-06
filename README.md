@@ -23,6 +23,6 @@ Note: We can automate the discovery process lately, like mentioned here, https:/
 
      - [x] Firstly locally run `docker-compose --build`. and note down the generated containers names.
 
-     - [x] Updated `01-create-ecr-repositories` file, with the correct container names, and execute the script, it will create the ECS repositories over AWS. Don't forget to update `AWS_PROFILE`, `AWS_REGION` and `ECR_PREFIX` before execution.
+     - [x] Update `01-create-ecr-repositories` file, with the correct container names, and execute the script, it will create the ECS repositories over AWS. Don't forget to update `AWS_PROFILE`, `AWS_REGION` and `ECR_PREFIX` before execution.
 
      - [x] To build and tag your local docker containers over ECR, execute `02-build-ecr-images`. Don't forget to update containers name with `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCOUNT_ID` and `ECR_PREFIX`.
