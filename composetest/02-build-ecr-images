@@ -7,7 +7,7 @@ ECR_PREFIX=eric-test
 
 eval $(aws --profile $AWS_PROFILE ecr get-login --no-include-email --region $AWS_REGION)
 
-containers=(composetest_web-dev_1)
+containers=(composetest_web-dev_1 composetest_redis-dev_1 composetest_consul-dev_1)
 for container in "${containers[@]}"
 do
   cd $container
