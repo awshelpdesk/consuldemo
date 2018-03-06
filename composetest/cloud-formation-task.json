@@ -1,0 +1,328 @@
+{
+  "family": "eric-test-family",
+  "executionRoleArn": "",
+  "containerDefinitions": [
+    {
+      "name": "web-dev",
+      "image": "504325682536.dkr.ecr.ap-southeast-2.amazonaws.com/eric-test/composetest_web-dev_1",
+      "cpu": 0,
+      "memory": 0,
+      "memoryReservation": 0,
+      "links": [
+
+      ],
+      "portMappings": [
+        {
+          "protocol": "tcp",
+          "containerPort": "5000",
+          "hostPort": "5000"
+        }
+      ],
+      "essential": true,
+      "entryPoint": [
+        ""
+      ],
+      "command": [
+
+      ],
+      "environment": [
+
+      ],
+      "mountPoints": [
+
+      ],
+      "volumesFrom": [
+        {
+          "sourceContainer": "",
+          "readOnly": true
+        }
+      ],
+      "linuxParameters": {
+        "capabilities": {
+          "add": [
+            ""
+          ],
+          "drop": [
+            ""
+          ]
+        },
+        "devices": [
+          {
+            "hostPath": "",
+            "containerPath": "",
+            "permissions": [
+              "write"
+            ]
+          }
+        ],
+        "initProcessEnabled": true
+      },
+      "hostname": "",
+      "user": "",
+      "workingDirectory": "",
+      "disableNetworking": true,
+      "privileged": true,
+      "readonlyRootFilesystem": true,
+      "dnsServers": [
+        ""
+      ],
+      "dnsSearchDomains": [
+        ""
+      ],
+      "extraHosts": [
+        {
+          "hostname": "",
+          "ipAddress": ""
+        }
+      ],
+      "dockerSecurityOptions": [
+        ""
+      ],
+      "dockerLabels": {
+        "KeyName": ""
+      },
+      "ulimits": [
+        {
+          "name": "nice",
+          "softLimit": 0,
+          "hardLimit": 0
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "syslog",
+        "options": {
+          "KeyName": ""
+        }
+      }
+    },
+    {
+      "name": "redis-dev",
+      "image": "504325682536.dkr.ecr.ap-southeast-2.amazonaws.com/eric-test/composetest_redis-dev_1",
+      "cpu": 0,
+      "memory": 0,
+      "memoryReservation": 0,
+      "links": [
+
+      ],
+      "portMappings": [
+        {
+          "protocol": "tcp",
+          "containerPort": "6379",
+          "hostPort": "6379"
+        }
+      ],
+      "essential": true,
+      "entryPoint": [
+        ""
+      ],
+      "command": [
+
+      ],
+      "environment": [
+
+      ],
+      "mountPoints": [
+
+      ],
+      "volumesFrom": [
+        {
+          "sourceContainer": "",
+          "readOnly": true
+        }
+      ],
+      "linuxParameters": {
+        "capabilities": {
+          "add": [
+            ""
+          ],
+          "drop": [
+            ""
+          ]
+        },
+        "devices": [
+          {
+            "hostPath": "",
+            "containerPath": "",
+            "permissions": [
+              "write"
+            ]
+          }
+        ],
+        "initProcessEnabled": true
+      },
+      "hostname": "",
+      "user": "",
+      "workingDirectory": "",
+      "disableNetworking": true,
+      "privileged": true,
+      "readonlyRootFilesystem": true,
+      "dnsServers": [
+        ""
+      ],
+      "dnsSearchDomains": [
+        ""
+      ],
+      "extraHosts": [
+        {
+          "hostname": "",
+          "ipAddress": ""
+        }
+      ],
+      "dockerSecurityOptions": [
+        ""
+      ],
+      "dockerLabels": {
+        "KeyName": ""
+      },
+      "ulimits": [
+        {
+          "name": "nice",
+          "softLimit": 0,
+          "hardLimit": 0
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "syslog",
+        "options": {
+          "KeyName": ""
+        }
+      }
+    },
+    {
+      "name": "consul-dev",
+      "image": "504325682536.dkr.ecr.ap-southeast-2.amazonaws.com/eric-test/composetest_consul-dev_1",
+      "cpu": 0,
+      "memory": 0,
+      "memoryReservation": 0,
+      "links": [
+
+      ],
+      "portMappings": [
+        {
+          "protocol": "tcp",
+          "containerPort": "8300/tcp",
+          "hostPort": "8300"
+        },
+        {
+          "protocol": "tcp",
+          "containerPort": "8301/tcp",
+          "hostPort": "8301"
+        },
+        {
+          "protocol": "tcp",
+          "containerPort": "8301/udp",
+          "hostPort": "8301"
+        },
+        {
+          "protocol": "tcp",
+          "containerPort": "8302/tcp",
+          "hostPort": "8302"
+        },
+        {
+          "protocol": "tcp",
+          "containerPort": "8302/udp",
+          "hostPort": "8302"
+        },
+        {
+          "protocol": "tcp",
+          "containerPort": "8500/tcp",
+          "hostPort": "8500"
+        },
+        {
+          "protocol": "tcp",
+          "containerPort": "8600/tcp",
+          "hostPort": "8600"
+        },
+        {
+          "protocol": "tcp",
+          "containerPort": "8600/udp",
+          "hostPort": "8600"
+        }
+      ],
+      "essential": true,
+      "entryPoint": [
+        ""
+      ],
+      "command": [
+        "agent -dev -client 0.0.0.0"
+      ],
+      "environment": [
+
+      ],
+      "mountPoints": [
+
+      ],
+      "volumesFrom": [
+        {
+          "sourceContainer": "",
+          "readOnly": true
+        }
+      ],
+      "linuxParameters": {
+        "capabilities": {
+          "add": [
+            ""
+          ],
+          "drop": [
+            ""
+          ]
+        },
+        "devices": [
+          {
+            "hostPath": "",
+            "containerPath": "",
+            "permissions": [
+              "write"
+            ]
+          }
+        ],
+        "initProcessEnabled": true
+      },
+      "hostname": "",
+      "user": "",
+      "workingDirectory": "",
+      "disableNetworking": true,
+      "privileged": true,
+      "readonlyRootFilesystem": true,
+      "dnsServers": [
+        ""
+      ],
+      "dnsSearchDomains": [
+        ""
+      ],
+      "extraHosts": [
+        {
+          "hostname": "",
+          "ipAddress": ""
+        }
+      ],
+      "dockerSecurityOptions": [
+        ""
+      ],
+      "dockerLabels": {
+        "KeyName": ""
+      },
+      "ulimits": [
+        {
+          "name": "nice",
+          "softLimit": 0,
+          "hardLimit": 0
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "syslog",
+        "options": {
+          "KeyName": ""
+        }
+      }
+    }
+  ],
+  "volumes": [
+
+  ],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "",
+  "memory": ""
+}
