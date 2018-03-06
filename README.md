@@ -13,16 +13,16 @@ Note: We can automate the discovery process lately, like mentioned here, https:/
 
 - [x] 1. We need to setup AWS CLI(`https://docs.aws.amazon.com/cli/latest/userguide/installing.html`) environment with ECS CLI(`https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cmd-ecs-cli-compose-up.html`).
 
-     - [x] 1a. Configure AWS CLI with access-keys and region information (`https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html`)
+     - [x] Configure AWS CLI with access-keys and region information (`https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html`)
 
 - [x] 2. To run our `docker-compose.yml` over ECS, we need to transpose it to correct ecs format using `convert-docker-compose-to-cloudformation.rb`
 
-     - [x] 2a. As a result you will get a file named `cloud-formation-task.json` which is an ECS version of local `docker-compose.yml`
+     - [x] As a result you will get a file named `cloud-formation-task.json` which is an ECS version of local `docker-compose.yml`
 
 - [x] 3. Now its time to create ECR repositories and upload our local docker containers over AWS.
 
-     - [x] 3a. Firstly locally run `docker-compose --build`. and note down the generated containers names.
+     - [x] Firstly locally run `docker-compose --build`. and note down the generated containers names.
 
-     - [x] 3b. Updated `01-create-ecr-repositories` file, with the correct container names, and execute the script, it will create the ECS repositories over AWS. Don't forget to update `AWS_PROFILE`, `AWS_REGION` and `ECR_PREFIX` before execution.
+     - [x] Updated `01-create-ecr-repositories` file, with the correct container names, and execute the script, it will create the ECS repositories over AWS. Don't forget to update `AWS_PROFILE`, `AWS_REGION` and `ECR_PREFIX` before execution.
 
-     - [x] 3c. To build and tag your local docker containers over ECR, execute `02-build-ecr-images`. Don't forget to update containers name with `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCOUNT_ID` and `ECR_PREFIX`.
+     - [x] To build and tag your local docker containers over ECR, execute `02-build-ecr-images`. Don't forget to update containers name with `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCOUNT_ID` and `ECR_PREFIX`.
