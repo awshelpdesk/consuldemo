@@ -1,4 +1,4 @@
-# Consul Redis demo
+### Consul Redis demo
 
 - [x] 1. Download the repo as follows, `git clone https://github.com/awshelpdesk/consuldemo.git`
 - [x] 2. cd into folder `composetest`
@@ -9,7 +9,7 @@
 
 Note: We can automate the discovery process lately, like mentioned here, https://github.com/subokita/consul-docker-test
 
-# Deployment via AWS ECS
+### Deployment via AWS ECS
 
 - [x] 1. We need to setup AWS CLI(`https://docs.aws.amazon.com/cli/latest/userguide/installing.html`) environment with ECS CLI(`https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cmd-ecs-cli-compose-up.html`).
 
