@@ -1,10 +1,15 @@
 ### Consul Redis demo
 
 - [x] . Download the repo as follows, `git clone https://github.com/awshelpdesk/consuldemo.git`
+
 - [x] . cd into folder `composetest`
+
 - [x] . Run `docker-compose up`
+
 - [x] . Register redis service with Consul as follows, make sure you are in folder `composetest`, execute the command `curl -X PUT --data-binary @./json/redis.json http://localhost:8500/v1/agent/service/register`
+
 - [x] . To verify service from consul registry execute command `curl http://localhost:8500/v1/catalog/service/redis | jq`
+
 - [x] . Use `http://<DOCKER_HOST>:8500/ui/#/dc1/services` to browse Consul UI in browser.
 
 Note: We can automate the discovery process lately, like mentioned here, https://github.com/subokita/consul-docker-test
