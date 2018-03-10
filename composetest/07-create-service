@@ -2,11 +2,11 @@
 
 AWS_ACCOUNT_ID=############
 AWS_PROFILE=default
-AWS_REGION=us-east-1
-CLUSTER_NAME=eric-test-cluster
+AWS_REGION=ap-southeast-2
+CLUSTER_NAME=test-cluster
 SERVICE_COUNT=1
-SERVICE_NAME=eric-test-service
-TASK_FAMILY=eric-test-family
+SERVICE_NAME=test-service
+TASK_FAMILY=test-family
 TASK_DEFINITION_ARN=arn:aws:ecs:$AWS_REGION:$AWS_ACCOUNT_ID:task-definition/$TASK_FAMILY
 
 aws --profile $AWS_PROFILE ecs create-service \
