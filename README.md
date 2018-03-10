@@ -1,30 +1,30 @@
 ### Consul Redis demo
 
-- [x] . Download the repo as follows, `git clone https://github.com/awshelpdesk/consuldemo.git`
+- [x] Download the repo as follows, `git clone https://github.com/awshelpdesk/consuldemo.git`
 
-- [x] . cd into folder `composetest`
+- [x] cd into folder `composetest`
 
-- [x] . Run `docker-compose up`
+- [x] Run `docker-compose up`
 
-- [x] . Register redis service with Consul as follows, make sure you are in folder `composetest`, execute the command `curl -X PUT --data-binary @./json/redis.json http://localhost:8500/v1/agent/service/register`
+- [x] Register redis service with Consul as follows, make sure you are in folder `composetest`, execute the command `curl -X PUT --data-binary @./json/redis.json http://localhost:8500/v1/agent/service/register`
 
-- [x] . To verify service from consul registry execute command `curl http://localhost:8500/v1/catalog/service/redis | jq`
+- [x] To verify service from consul registry execute command `curl http://localhost:8500/v1/catalog/service/redis | jq`
 
-- [x] . Use `http://<DOCKER_HOST>:8500/ui/#/dc1/services` to browse Consul UI in browser.
+- [x] Use `http://<DOCKER_HOST>:8500/ui/#/dc1/services` to browse Consul UI in browser.
 
 Note: We can automate the discovery process lately, like mentioned here, https://github.com/subokita/consul-docker-test
 
 ### Deployment via AWS ECS
 
-- [x] . We need to setup AWS CLI(`https://docs.aws.amazon.com/cli/latest/userguide/installing.html`) environment with ECS CLI(`https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cmd-ecs-cli-compose-up.html`).
+- [x] We need to setup AWS CLI(`https://docs.aws.amazon.com/cli/latest/userguide/installing.html`) environment with ECS CLI(`https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cmd-ecs-cli-compose-up.html`).
 
      - [x] Configure AWS CLI with access-keys and region information (`https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html`)
 
-- [x] . To run our `docker-compose.yml` over ECS, we need to transpose it to correct ecs format using `convert-docker-compose-to-cloudformation.rb`
+- [x] To run our `docker-compose.yml` over ECS, we need to transpose it to correct ecs format using `convert-docker-compose-to-cloudformation.rb`
 
      - [x] As a result you will get a file named `cloud-formation-task.json` which is an ECS version of local `docker-compose.yml`
 
-- [x] . Now its time to create ECR repositories and upload our local docker containers over AWS.
+- [x] Now its time to create ECR repositories and upload our local docker containers over AWS.
 
      - [x] Firstly locally run `docker-compose --build`. and note down the generated containers names.
 
@@ -32,12 +32,12 @@ Note: We can automate the discovery process lately, like mentioned here, https:/
 
      - [x] To build, tag and push your local docker containers over ECR, execute `02-build-ecr-images`. Don't forget to update `AWS_PROFILE`, `AWS_REGION`, `AWS_ACCOUNT_ID` and `ECR_PREFIX`.
      
-- [x] . Create an IAM role for ECS components to work in a secure manner, execute `03-create-ecs-role`. Don't forget to update `AWS_PROFILE` and `ROLE_NAME`.
+- [x] Create an IAM role for ECS components to work in a secure manner, execute `03-create-ecs-role`. Don't forget to update `AWS_PROFILE` and `ROLE_NAME`.
 
-- [x] . Its time to create ECS cluster, execute `04-create-cluster`. Update `AWS_PROFILE` and `CLUSTER_NAME` before execution of script.
+- [x] Its time to create ECS cluster, execute `04-create-cluster`. Update `AWS_PROFILE` and `CLUSTER_NAME` before execution of script.
 
-- [x] . - Create ec2 instance for running ECS Agent and register it with the ECS cluster.  Execute `05-create-ec2` but first update values like `AWS_IAM_INSTANCE_PROFILE`, `AWS_KEY_NAME`, `AWS_PROFILE`, `AWS_SECURITY_GROUP_IDS`, `AWS_SUBNET_ID`, `EC2_COUNT`, `EC2_INSTANCE_TYPE` and `ECS_AMI_ID`. Update cluster name in `ecs.config` too.
+- [x] - Create ec2 instance for running ECS Agent and register it with the ECS cluster.  Execute `05-create-ec2` but first update values like `AWS_IAM_INSTANCE_PROFILE`, `AWS_KEY_NAME`, `AWS_PROFILE`, `AWS_SECURITY_GROUP_IDS`, `AWS_SUBNET_ID`, `EC2_COUNT`, `EC2_INSTANCE_TYPE` and `ECS_AMI_ID`. Update cluster name in `ecs.config` too.
 
-- [x] . - Its time to register task-definition, so execute `06-register-task`. Update the variables in the fle before execution.
+- [x] - Its time to register task-definition, so execute `06-register-task`. Update the variables in the fle before execution.
 
-- [x] . In last, to execute the ECS task as service upon ec2 instance, update values and execute `07-create-service`. 
+- [x] In last, to execute the ECS task as service upon ec2 instance, update values and execute `07-create-service`. 
